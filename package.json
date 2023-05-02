@@ -6,9 +6,12 @@
   "dependencies": {
     "@nativescript/core": "~8.5.0",
     "@nativescript/theme": "~3.0.2",
+    "genshin-api": "^2.1.0",
+    "moment-timezone": "^0.5.43",
     "nativescript-vue": "~2.9.3"
   },
   "devDependencies": {
+    "@nativescript/android": "8.4.0",
     "@nativescript/webpack": "~5.0.14",
     "nativescript-vue-template-compiler": "~2.9.3"
   }

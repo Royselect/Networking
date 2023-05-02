@@ -19,3 +19,155 @@
   font-family: 'Font Awesome 5 Free', 'fa-regular-400';
   font-weight: 400;
 }
+
+page {
+  background-color: #1E3D59;
+  color: #FFFFFF;
+}
+
+image {
+  height: 10%;
+  width: 10%;
+}
+
+.image-data {
+  height: 15%;
+  width: 15%;
+}
+
+.name-app {
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 0.3px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-repeat: no-repeat;
+  background-position: 10% 5%;
+  background-size: 5%;
+  width: 200px;
+  margin-left: 5%;
+  margin-right: 15%;
+  //background-color: rgba(0, 255, 255, 0.475);
+}
+
+.bar-weather {
+  background-color: rgba(0, 255, 255, 0.475);
+  width: 100%;
+  
+}
+
+ActionBar {
+  width: 100%;
+  background-color: #1E3D59;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.search-bar {
+  //background-color: rgba(0, 255, 255, 0.49);
+  width: 80%;
+  font-size: 20px;
+  border-radius: 2em;
+  //margin-top: 5%;
+  height: 13%;
+  //background-color: #4389c7;
+  margin-left: 3%;
+  margin-right: 3%;
+
+}
+
+.icon-search {
+  height: 10%;
+  width: 10%;
+}
+
+
+.weather-temperature {
+  display: flex;
+  align-items: center;
+  height: 60%;
+
+}
+
+.weather-for-days{
+  height: 40%;
+  background-color: #295479;
+  width: 80%;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-bottom: 7%;
+  border-radius: 50px;
+  padding-top: 20%;
+  padding-right: 15%;
+  padding-left: 15%;
+}
+
+.label-days {
+  display: flex;
+  justify-content: space-between;
+  font-size: 17px;
+  margin-bottom: 5%;
+}
+
+.weather-three {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  margin-right: 2%;
+  margin-left: 2%;
+  margin-bottom: 3%;
+}
+
+.weather-one-day {
+  display: flex;
+  //justify-content: center;
+  align-items: center;
+
+}
+
+.button-for-days {
+  border-radius: 70px;
+  font-size: 17px;
+  font-weight: 500;
+  // background-color: #1e3d59c7;
+  // color: #FFFFFF;
+  margin-top: 3%;
+}
+
+.weather-data {
+  //background-color: rgba(0, 255, 255, 0.547);
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  height: 20%;
+  font-size: 15px;
+  padding-left: 30%;
+}
+
+.label-temp {
+  font-size: 90px;
+  font-weight: 200;
+}
+
+.img-temp-main {
+  height: 20%;
+  width: 20%;
+}
+
+.img-sun-main {
+  height: 20%;
+  width: 20%;
+}
+
+.pos-self-temp {
+  vertical-align: middle;
+  //background-color: rgba(0, 255, 255, 0.495);
+  margin-top: 5%;
+  margin-left: 4%;
+  font-size: 15px;
+}
+
+.temper-data {
+  margin-top: 20%;
+}
