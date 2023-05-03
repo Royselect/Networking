@@ -22,7 +22,6 @@
 
 <script>
 import Home from './Home.vue'
-//import * as ApplicationSettings from '@nativescript/core/application-settings';
   export default {
     data() {
         return {

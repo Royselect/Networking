@@ -87,13 +87,9 @@
 </template>
 
 <script>
-// var apiKey = 'f1a0e5088a469f8b87ed28cc9e572a55';
-// var cityDefault = 'Khanty-Mansiysk';
-//import Days from './Days.vue'
 import { Http } from '@nativescript/core';
 import Test from './Test.vue'
 import Change from './Change.vue'
-//import * as ApplicationSettings from '@nativescript/core/application-settings';
   export default {
     props: ["cityNew"],
     data() {
@@ -120,7 +116,7 @@ import Change from './Change.vue'
             weatherTomorow: "",
             tempTomorowNight: "",
             iconWeather: "",
-            days: ["Вск", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+            days: {},
         };
     },
     mounted() {
@@ -172,7 +168,7 @@ import Change from './Change.vue'
         getWeatherTomorow() {
             Http.getJSON(`https://api.openweathermap.org/data/2.5/forecast?lat=${this.lat}&lon=${this.lon}&appid=f1a0e5088a469f8b87ed28cc9e572a55`).then(result => {
                 this.weatherData = result["list"];
-                for(let i = 0; i < this.weatherData.length; i++){ //Поиск завтрашнего дня
+                for(let i = 0, d; i < this.weatherData.length; i++){ //Поиск завтрашнего дня
                     let data = new Date(this.weatherData[i]["dt_txt"]);
                     let tomorowDay = data.getDate(); //завтрашний день
                     let todaydata = new Date(); // сегодняшняя дата
@@ -193,9 +189,18 @@ import Change from './Change.vue'
                         let hour = data.getHours();
                         if(hour == 3){
                             this.tempTomorowNight = Math.floor(this.weatherData[i]["main"]["temp"]) - 273;
-                            break;
                         }
                     }
+                    // собираем данные на 5 дней
+                    // if((data == today) ){
+                    //     d = this.weatherData[i];
+                    //     this.days[ d.id ] = d;
+                    // }else if((data != today) && (data.getHours() == '12')){
+                    //     d = this.weatherData[i];
+                    //     this.days[ d.id ] = d;
+                        
+                    // }
+
                 }
 
             }).catch(error => {
@@ -203,7 +208,12 @@ import Change from './Change.vue'
             });
         },
         goToTest() {
-            this.$navigateTo(Test);
+            this.$navigateTo(Test, {
+                props: {
+                    datalat: this.lat,
+                    datalon: this.lon,
+                }
+            });
         },
         goToChange() {
             this.$navigateTo(Change);
@@ -243,32 +253,6 @@ import Change from './Change.vue'
                 return "https://openweathermap.org/img/wn/04d@2x.png";
             }
         },
-        // calcTime(offset) {
-        //     d = new Date();
-        //     utc = d.getTime() + (d.getTimezoneOffset() * 60000);
-        //     nd = new Date(utc + (3600000 * offset));
-        //     return nd;
-        // },
-        // toUpperCaseFirst(str) {
-        //     if (!str)
-        //         return str;
-        //     else
-        //         return str[0].toUpperCase() + str.slice(1);
-        // },
-        // sendAjax(url) {
-        //     return new Promise((resolve, reject) => {
-        //         let xhr = new XMLHttpRequest();
-        //         xhr.open("GET", url);
-        //         xhr.responseType = "json";
-        //         xhr.addEventListener("load", () => {
-        //             resolve(xhr.response);
-        //         });
-        //         xhr.addEventListener("error", () => {
-        //             reject();
-        //         });
-        //         xhr.send();
-        //     });
-        // }
     },
 }
 </script>
