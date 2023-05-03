@@ -2,12 +2,23 @@
     <Page>
         <ActionBar flat="true">
             <NavigationButton text="Назад" android.systemIcon="ic_menu_back" @tap="backHome"/>
-            <label class="name-app" text="Прогноз на 10 дней" />
+            <label class="label-change" text="Прогноз на 5 дней" />
         </ActionBar>
-        <FlexboxLayout flexDirection="column">
-            <label text="Прогноз на 10 дней"/>
+        <FlexboxLayout class="weather-for-days-data" flexDirection="row">
+            <template style="background-color: aqua;">
+                <FlexboxLayout class="weather-three-data" flexDirection="row">
+                    <label text="Дата" />
+                    <FlexboxLayout flexDirection="row" class="weather-one-day"> 
+                        <FlexboxLayout class="days" flexDirection="row">
+                            <label text="днем" />
+                            <label text=" / "/>
+                            <label text="ночью"/>
+                        </FlexboxLayout>
+                        <image src="~/assets/img/sun.png"/>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+            </template>
         </FlexboxLayout>
-
     </Page>
 </template>
 
@@ -17,22 +28,15 @@ import Home from './Home.vue'
   export default {
     data() {
         return {
-            days: ["Вск", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
-            month: ["Янв", "Фев", "Март", "Апр", "Май", "Июнь", "Июль", "Авг", "Сен", "Окт", "Нояб", "Дек"],
+          
         };
     },
     mounted() {
     },
     methods: {
-
-        backHome(){
+        backHome() {
             this.$navigateBack();
         },
-
-        goToHome(){
-            this.$navigateTo(Home);
-        },
-
     },
 }
 </script>
